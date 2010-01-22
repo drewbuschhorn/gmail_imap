@@ -9,12 +9,11 @@ class gmail_imap:
         self.password = password
         self.loggedIn = False
         
-        self.mailboxes = gmail_mailboxes.gmail_mailboxes(self);
-        self.messages = gmail_messages.gmail_messages(self);
+        self.mailboxes = gmail_mailboxes.gmail_mailboxes(self)
+        self.messages = gmail_messages.gmail_messages(self)
         
     def login (self):
         self.imap_server.login(self.username,self.password)
-        self.imap_server.select()
         self.loggedIn = True
     
     def logout (self):
@@ -26,11 +25,16 @@ class gmail_imap:
         
 if __name__ == '__main__':        
 
-    gmail = gmail_imap("madam.tabitha@gmail.com","emerald185")
+    gmail = gmail_imap("email","password")
     
     gmail.mailboxes.load()
+    print gmail.mailboxes
     
     gmail.messages.process("INBOX")
     print gmail.messages
+  
+    for msg in gmail.messages[0:2]:
+      message = gmail.messages.getMessage(msg.uid)
+      print message
     
-    gmail.logout();
+    gmail.logout()

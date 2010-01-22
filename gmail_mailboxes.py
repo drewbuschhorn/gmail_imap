@@ -20,3 +20,6 @@ class gmail_mailboxes:
                    
     def __repr__(self):
         return "<gmail_mailboxes:  [%s]>" %  (',  '.join(self.mailboxes))
+        
+    def __getitem__(self, key): return self.mailboxes[key]
+    def __setitem__(self, key, item): self.mailboxes[key] = item
