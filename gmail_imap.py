@@ -23,9 +23,10 @@ class gmail_imap:
         
 
         
-if __name__ == '__main__':        
+if __name__ == '__main__':
+    import getpass
 
-    gmail = gmail_imap("email","password")
+    gmail = gmail_imap(getpass.getuser(),getpass.getpass())
     
     gmail.mailboxes.load()
     print gmail.mailboxes
@@ -36,5 +37,6 @@ if __name__ == '__main__':
     for msg in gmail.messages[0:2]:
       message = gmail.messages.getMessage(msg.uid)
       print message
+      print message.Body
     
     gmail.logout()
