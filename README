@@ -1,0 +1,13 @@
+GMAIL IMAP TEMPLATE
+=============
+
+As I said before mocking Google for the lack of a Gmail API, we’re 
+forced to turn to IMAP. This being an exercise in python, I turned to 
+the standard library docs, and got no help … worse than no help, 
+confusing ‘help’. Next up, I think we should repent and turn to Google 
+to help us find example code that will show us the proper way to deal 
+with imaplib. 
+
+To summarize the results … crap. Some decent attempts, but mostly, as 
+you can see in my references, crap. Don’t trust my opinion? Fine, I 
+never liked you anyway … 
